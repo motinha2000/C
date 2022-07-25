@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "calcula.h"
+#include "ex2.h"
 
 float leitura(float *n){
     printf("Digite um numero\n");

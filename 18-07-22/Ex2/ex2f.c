@@ -1,4 +1,4 @@
-#include "array.h"
+#include "ex2.h"
 #include <stdio.h>
 
 void leitura (int *vetor){

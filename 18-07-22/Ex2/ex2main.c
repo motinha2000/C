@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "calcula.h"
-#include "calcula.c"
+#include "ex2.h"
+#include "ex2f.c"
 
 int main()
 {   
