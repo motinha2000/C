@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //USAR ATALHO "Ctrl+alt+n" para rodar programa em C!
 #define tam 10
 
 void leitura(int *vetor){
