@@ -1,0 +1,6 @@
+float leitura(float *n)
+float soma(float x1, float x2)
+float subtracao(float x1, float x2)
+float multiplicacao(float x1, float x2)
+float divisao(float x1, float x2)
+void menu(float a, float b)
