@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //ALGORITMO DE ORCENAÇÃO POR SELEÇÃO
 #define TAM 3
 
 int main(int argc, char const *argv[])
