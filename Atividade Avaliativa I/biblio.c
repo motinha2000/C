@@ -4,7 +4,7 @@
 
 // FUNÇÕES BASE:
 
-void leitura(Escaninho *pessoa, int tam)//cadastro
+void leitura(Escaninho *pessoa, int tam) // cadastro
 {
     for (int i = 0; i < tam; i++)
     {
@@ -12,13 +12,13 @@ void leitura(Escaninho *pessoa, int tam)//cadastro
         scanf("%d", &pessoa[i].id);
         printf("\nEscolha o Tipo volume pelo número: 1- Bolsa pequena, 2-Bolsa Grande, 3-Mochila, 4-Sacola, 5-Caixa: ");
         scanf("\n%d", &pessoa[i].tipvol);
-        printf("\nEscolha a localização(NÚMERO DE 0 A 12!)");
+        printf("\nEscolha a localização(NÚMERO DE 0 A 12): ");
         scanf("%d", &pessoa[i].locali);
-        printf("\nInforme o cpf do acompanhante: ");
+        printf("\nInforme o CPF do acompanhante: ");
         scanf("%s", pessoa[i].cpfacomp);
-        printf("\nInforme o cpf do paciente: ");
+        printf("\nInforme o CPF do paciente: ");
         scanf("%s", pessoa[i].cpfpaci);
-        printf("\nUsuario Cadastrado\n");
+        printf("\nUsuario Cadastrado com sucesso!\n");
     }
 }
 
@@ -75,7 +75,7 @@ void menu(Escaninho *pessoa, int tam)
             leitura(pessoa, tam);
             break; // chamada da função para cadastro de pessoa
         case 2:
-            buscpfacomp(pessoa, tam);
+            buscacpfacomp(pessoa, tam);
             break; // busca de volumes por cpf do acompanhante
         case 3:
             buscacpfpaci(pessoa, tam);
@@ -102,17 +102,29 @@ void menu(Escaninho *pessoa, int tam)
 // ALGORITMOS DE BUSCA ABAIXO:
 
 void buscacpfacomp(Escaninho *pessoa, int tam)
-{   
+{
     Escaninho aux;
     bubblesort(pessoa, tam);
-    printf("Informe o CPF do acompanhante, para busca de volumes.");
+    printf("Informe o CPF do acompanhante, para busca de volumes: ");
     scanf("%s", aux.cpfacomp);
 
-    for(int i=0;i<tam;i++){
-
+    for (int i = 0; i < tam; i++)
+    {
     }
 }
 
+void buscacpfpaci(Escaninho *pessoa, int tam)
+{
+}
+
+// RELATÓRIOS ABAIXO:
+
+void volumetotal(Escaninho *pessoa, int tam)
+{}
+void volumeportipo(Escaninho *pessoa, int tam)
+{}
+void volumeporlocali(Escaninho *pessoa, int tam)
+{}
 // ALGORITMOS DE ORDENAÇÂO ABAIXO:
 
 void bubblesort(Escaninho *pessoa, int tam)
@@ -126,7 +138,6 @@ void bubblesort(Escaninho *pessoa, int tam)
                 pessoa[i] = pessoa[j];
                 pessoa[j] = aux;
             }
-    free(aux);
 }
 
 void mergesort(Escaninho *pessoa, int tam)
