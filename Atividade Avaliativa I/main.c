@@ -1,5 +1,10 @@
+/* ATIVIDADE AVALIATIVA:
+Um hospital precisa organizar os volumes trazidos por acompanhantes de pacientes internados. 
+Cada acompanhante pode guardar apenas um volume no  hospital enquanto assiste ao paciente. 
+Sugeriu-se que esse controle de volumes fosse realizado por meio de um programa de computador.
+*/
 #include <stdio.h>
-#include "biblio1.h"
+#include "biblio.h"
 #include <stdlib.h>
 
 int main()
@@ -8,9 +13,9 @@ int main()
     Escaninho *pessoa;//criação da variável pessoa do tipo Escaninho
     
     printf("Informe a quantidade de pessoas a serem cadastradas: ");
-    scanf("%d", &tam);
+    scanf("%d", &tam);//leitura da variável
     
-    pessoa = malloc(tam*sizeof(Escaninho));
+    pessoa = malloc(tam*sizeof(Escaninho));//alocação dinâmica do vetor de struct pessoa
     
     menu(pessoa, tam);
     //void menu(pessoa, tam);
