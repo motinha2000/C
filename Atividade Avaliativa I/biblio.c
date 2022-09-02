@@ -22,42 +22,11 @@ void leitura(Escaninho *pessoa, vetor *localizacao) // cadastro
                 scanf("%s", pessoa[i].cpfpaci);
                 printf("\nUsuario Cadastrado com sucesso!\n");
                 localizacao[i]=i;
-            	}
+            }
         }
     }
 }
 
-void escrita(Escaninho *pessoa, vetor *localizacao)
-{
-    for (int i = 0; i < 12; i++)
-    {
-        printf("\nID:%d", pessoa[i].id);
-        switch (pessoa[i].tipvol)
-        {
-        case 1:
-            printf("\nBolsa pequena");
-            break;
-        case 2:
-            printf("\nBolsa grande");
-            break;
-        case 3:
-            printf("\nMochila");
-            break;
-        case 4:
-            printf("\nSacola");
-            break;
-        case 5:
-            printf("\nCaixa");
-            break;
-        default:
-            printf("\nopcao Invalida");
-            break;
-        }
-        printf("\nlocalização: " );
-        printf("\ncpf do acompanhante: %s", pessoa[i].cpfacomp);
-        printf("\ncpf do paciente: %s", pessoa[i].cpfpaci);
-    }
-}
 
 void menu(Escaninho *pessoa, vetor *localizacao)
 {

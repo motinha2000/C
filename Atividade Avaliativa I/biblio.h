@@ -11,7 +11,6 @@ typedef int vetor;
 
 // funções base
 void leitura(Escaninho *pessoa, vetor *localizacao ); // cadastro
-void escrita(Escaninho *pessoa, vetor *localizacao ); // função a ser usada futuramente
 void menu(Escaninho *pessoa, vetor *localizacao );    // menu principal
 
 // funções de relatório
