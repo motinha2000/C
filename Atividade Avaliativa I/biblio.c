@@ -5,8 +5,8 @@
 // FUNÇÕES BASE:
 
 void leitura(Escaninho *pessoa) // cadastro
-{   
-    for(int i=0;i<12;i++)//local na memória está salvo?FAZER VARREDURA!
+{  
+    for(int i=0;i<2;i++)//local na memória está salvo?FAZER VARREDURA!
     {
         if(pessoa[i].localizacao=-1)
         {
@@ -25,26 +25,25 @@ void leitura(Escaninho *pessoa) // cadastro
     }
 }
 
-
 void menu(Escaninho *pessoa)
 {
     int op = 0;
 
         printf("\n_______________________________________________________________\n");
         printf("|                Seja bem-vindo(a)!                           |\n");
-    do
-    {
         printf("|                                                             |\n");
         printf("|    1 - Entrada de volume no escaninho.                      |\n");//Cadastro
         printf("|    2 - Busca de volumes por CPF do acompanhante.            |\n");//busca por cpf do acompanhante
         printf("|    3 - Busca de volumes por CPF do paciente.                |\n");//busca por cpf do paciente
         printf("|    4 - Volumes armazenados atualmente.                      |\n");//imprimir dados do paciente e do acompanahnte e a localização no escaninho
         printf("|    5 - Quantidade de volumes de acordo com o tipo.          |\n");//busca por tipvol
-        printf("|    6 - Volume armazenado em uma determinada localizacao.    |\n");//imprimir o tipo do volume na determinada localização fornecida
+        printf("|    6 - Volume armazenado em uma determinada localização.  |\n");//imprimir o tipo do volume na determinada localização fornecida
         printf("|    7 - Sair do programa.                                    |\n");//Encerra o programa
         printf("|                                                             |\n");
         printf("|____________________________________Digite a opcao desejada--> ");
         scanf("%d", &op);
+    do
+    {   
         switch (op)
         {
         case 1:
@@ -72,6 +71,20 @@ void menu(Escaninho *pessoa)
             printf("\nOpção inexistente\n");
             break;
         }
+
+        printf("\n_______________________________________________________________\n");
+        printf("|                                                             |\n");
+        printf("|    1 - Entrada de volume no escaninho.                      |\n");//Cadastro
+        printf("|    2 - Busca de volumes por CPF do acompanhante.            |\n");//busca por cpf do acompanhante
+        printf("|    3 - Busca de volumes por CPF do paciente.                |\n");//busca por cpf do paciente
+        printf("|    4 - Volumes armazenados atualmente.                      |\n");//imprimir dados do paciente e do acompanahnte e a localização no escaninho
+        printf("|    5 - Quantidade de volumes de acordo com o tipo.          |\n");//busca por tipvol
+        printf("|    6 - Volume armazenado em uma determinada localização.  |\n");//imprimir o tipo do volume na determinada localização fornecida
+        printf("|    7 - Sair do programa.                                    |\n");//Encerra o programa
+        printf("|                                                             |\n");
+        printf("|____________________________________Digite a opcao desejada--> ");
+        scanf("%d", &op);
+        
     } while (op != 7);
 }
 

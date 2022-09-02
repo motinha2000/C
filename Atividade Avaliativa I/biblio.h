@@ -1,4 +1,5 @@
 /*Arquivo de cabeçalho para main e arquivo que carrega funções*/
+
 typedef struct Escaninho
 {
     int id;

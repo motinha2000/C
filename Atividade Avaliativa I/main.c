@@ -10,11 +10,11 @@ Sugeriu-se que esse controle de volumes fosse realizado por meio de um programa 
 #include <locale.h>
 
 int main()
-{   
-    setlocale( LC_ALL, "" );
+{setlocale(LC_ALL,"portuguese-brazilian");
+    
     Escaninho *pessoa; // criação da variável pessoa do tipo Escaninho
-    pessoa = malloc(12*sizeof(Escaninho));
-    for(int i=0;i<12;i++){//preenchimento das posições do vetor
+    pessoa = malloc(2*sizeof(Escaninho));
+    for(int i=0;i<2;i++){//preenchimento das posições do vetor
         pessoa[i].localizacao=-1;
     }
     
