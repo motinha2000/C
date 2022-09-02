@@ -10,7 +10,7 @@ Sugeriu-se que esse controle de volumes fosse realizado por meio de um programa 
 #include <locale.h>
 
 int main()
-{setlocale(LC_ALL,"portuguese-brazilian");
+{setlocale(LC_ALL,"Portuguese-Brazilian");
     
     Escaninho *pessoa; // criação da variável pessoa do tipo Escaninho
     pessoa = malloc(2*sizeof(Escaninho));
