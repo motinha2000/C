@@ -4,11 +4,11 @@
 
 // FUNÇÕES BASE:
 
-void leitura(Escaninho *pessoa, Vetor localizacao[]) // cadastro
+void leitura(Escaninho *pessoa) // cadastro
 {   
     for(int i=0;i<12;i++)//local na memória está salvo?FAZER VARREDURA!
     {
-        if(localizacao[i]==0)
+        if(pessoa[i].localizacao=-1)
         {
                 printf("\nID: ");
                 scanf("%d", &pessoa[i].id);
@@ -19,14 +19,14 @@ void leitura(Escaninho *pessoa, Vetor localizacao[]) // cadastro
                 printf("\nInforme o CPF do paciente: ");
                 scanf("%s", pessoa[i].cpfpaci);
                 printf("\nUsuario Cadastrado com sucesso!\n");
-                localizacao[i]=i;
+                pessoa[i].localizacao=i;
                 break;
         }
     }
 }
 
 
-void menu(Escaninho *pessoa, Vetor *localizacao)
+void menu(Escaninho *pessoa)
 {
     int op = 0;
 
@@ -48,22 +48,22 @@ void menu(Escaninho *pessoa, Vetor *localizacao)
         switch (op)
         {
         case 1:
-            leitura(pessoa, localizacao);
+            leitura(pessoa);
             break; // chamada da função para cadastro de pessoa
         case 2:
-            buscacpfacomp(pessoa, localizacao);
+            buscacpfacomp(pessoa);
             break; // busca de volumes por cpf do acompanhante
         case 3:
-            buscacpfpaci(pessoa, localizacao);
+            buscacpfpaci(pessoa);
             break; // busca de volumes por cpf do paciente
         case 4:
-            volumetotal(pessoa, localizacao);
+            volumetotal(pessoa);
             break; // relatório dos volumes totais contendo: cpfpaci, cpfacomp e localizacao;
         case 5:
-            volumeportipo(pessoa, localizacao);
+            volumeportipo(pessoa);
             break;
         case 6:
-            volumeporlocali(pessoa, localizacao);
+            volumeporlocali(pessoa);
             break;
         case 7:
             printf("\nSaindo...\n");
@@ -77,7 +77,7 @@ void menu(Escaninho *pessoa, Vetor *localizacao)
 
 // ALGORITMOS DE BUSCA ABAIXO:
 
-void buscacpfacomp(Escaninho *pessoa, Vetor *localizacao)
+void buscacpfacomp(Escaninho *pessoa)
 {
     Escaninho aux;
     printf("\nInforme o CPF do acompanhante, para busca de volumes: ");
@@ -89,21 +89,21 @@ void buscacpfacomp(Escaninho *pessoa, Vetor *localizacao)
     }
 }
 
-void buscacpfpaci(Escaninho *pessoa, Vetor *localizacao)
+void buscacpfpaci(Escaninho *pessoa)
 {
 }
 
 // RELATÓRIOS ABAIXO:
 
-void volumetotal(Escaninho *pessoa, Vetor *localizacao)
+void volumetotal(Escaninho *pessoa)
 {}
-void volumeportipo(Escaninho *pessoa, Vetor *localizacao)
+void volumeportipo(Escaninho *pessoa)
 {}
-void volumeporlocali(Escaninho *pessoa, Vetor *localizacao)
+void volumeporlocali(Escaninho *pessoa)
 {}
 // ALGORITMOS DE ORDENAÇÂO ABAIXO:
 
-void bubblesort(Escaninho *pessoa, Vetor *localizacao)
+void bubblesort(Escaninho *pessoa)
 {
     Escaninho aux;
     for (int i = 0; i < 12 - 1; i++)
@@ -116,10 +116,10 @@ void bubblesort(Escaninho *pessoa, Vetor *localizacao)
             }
 }
 
-void mergesort(Escaninho *pessoa, Vetor *localizacao)
+void mergesort(Escaninho *pessoa)
 {
 }
 
-void quicksort(Escaninho *pessoa, Vetor *localizacao)
+void quicksort(Escaninho *pessoa)
 {
 }
