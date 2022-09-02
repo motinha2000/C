@@ -9,8 +9,8 @@ Sugeriu-se que esse controle de volumes fosse realizado por meio de um programa 
 
 int main()
 {
-    vetor *localizacao[12];// criação da váriavel que será usada para guardar a localização
-    for(int i=0;i<12;i++){
+    Vetor localizacao[12];// criação da váriavel que será usada para guardar a localização
+    for(int i=0;i<12;i++){//preenchimento das posições do vetor
         localizacao[i]=0;
     }
     Escaninho *pessoa; // criação da variável pessoa do tipo Escaninho

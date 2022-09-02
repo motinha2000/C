@@ -4,14 +4,12 @@
 
 // FUNÇÕES BASE:
 
-void leitura(Escaninho *pessoa, vetor *localizacao) // cadastro
+void leitura(Escaninho *pessoa, Vetor localizacao[]) // cadastro
 {   
-    for(int i=0;i<12;i++)//local na memória está salvo?FAZER VARREDURA
+    for(int i=0;i<12;i++)//local na memória está salvo?FAZER VARREDURA!
     {
-        if(i==0)
+        if(localizacao[i]==0)
         {
-            for (int i = 0; i < 12; i++)
-            {
                 printf("\nID: ");
                 scanf("%d", &pessoa[i].id);
                 printf("\nEscolha o Tipo volume pelo número: 1- Bolsa pequena, 2-Bolsa Grande, 3-Mochila, 4-Sacola, 5-Caixa: ");
@@ -22,13 +20,13 @@ void leitura(Escaninho *pessoa, vetor *localizacao) // cadastro
                 scanf("%s", pessoa[i].cpfpaci);
                 printf("\nUsuario Cadastrado com sucesso!\n");
                 localizacao[i]=i;
-            }
+                break;
         }
     }
 }
 
 
-void menu(Escaninho *pessoa, vetor *localizacao)
+void menu(Escaninho *pessoa, Vetor *localizacao)
 {
     int op = 0;
 
@@ -79,33 +77,33 @@ void menu(Escaninho *pessoa, vetor *localizacao)
 
 // ALGORITMOS DE BUSCA ABAIXO:
 
-void buscacpfacomp(Escaninho *pessoa, vetor *localizacao)
+void buscacpfacomp(Escaninho *pessoa, Vetor *localizacao)
 {
     Escaninho aux;
-    bubblesort(pessoa, localizacao);
-    printf("Informe o CPF do acompanhante, para busca de volumes: ");
+    printf("\nInforme o CPF do acompanhante, para busca de volumes: ");
     scanf("%s", aux.cpfacomp);
+    printf("\n");
 
     for (int i = 0; i < 12; i++)
     {
     }
 }
 
-void buscacpfpaci(Escaninho *pessoa, vetor *localizacao)
+void buscacpfpaci(Escaninho *pessoa, Vetor *localizacao)
 {
 }
 
 // RELATÓRIOS ABAIXO:
 
-void volumetotal(Escaninho *pessoa, vetor *localizacao)
+void volumetotal(Escaninho *pessoa, Vetor *localizacao)
 {}
-void volumeportipo(Escaninho *pessoa, vetor *localizacao)
+void volumeportipo(Escaninho *pessoa, Vetor *localizacao)
 {}
-void volumeporlocali(Escaninho *pessoa, vetor *localizacao)
+void volumeporlocali(Escaninho *pessoa, Vetor *localizacao)
 {}
 // ALGORITMOS DE ORDENAÇÂO ABAIXO:
 
-void bubblesort(Escaninho *pessoa, vetor *localizacao)
+void bubblesort(Escaninho *pessoa, Vetor *localizacao)
 {
     Escaninho aux;
     for (int i = 0; i < 12 - 1; i++)
@@ -118,10 +116,10 @@ void bubblesort(Escaninho *pessoa, vetor *localizacao)
             }
 }
 
-void mergesort(Escaninho *pessoa, vetor *localizacao)
+void mergesort(Escaninho *pessoa, Vetor *localizacao)
 {
 }
 
-void quicksort(Escaninho *pessoa, vetor *localizacao)
+void quicksort(Escaninho *pessoa, Vetor *localizacao)
 {
 }
