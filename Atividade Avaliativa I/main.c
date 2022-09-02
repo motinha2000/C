@@ -9,15 +9,13 @@ Sugeriu-se que esse controle de volumes fosse realizado por meio de um programa 
 
 int main()
 {
-    int tam = 0;       // criação da váriavel que será usada para futura alocação dinâmica
+    vetor *localizacao[12];// criação da váriavel que será usada para guardar a localização
+    for(int i=0;i<12;i++){
+        localizacao[i]=0;
+    }
     Escaninho *pessoa; // criação da variável pessoa do tipo Escaninho
 
-    printf("Informe a quantidade de pessoas a serem cadastradas: ");
-    scanf("%d", &tam); // leitura da variável
-
-    pessoa = malloc(tam * sizeof(Escaninho)); // alocação dinâmica do vetor de struct pessoa
-
-    menu(pessoa, tam);
+    menu(pessoa, localizacao);
     // void menu(pessoa, tam);
     // bubblesort(v,tam);
     // printf("\nQual elemento deseja buscar? ");

@@ -4,27 +4,32 @@
 
 // FUNÇÕES BASE:
 
-void leitura(Escaninho *pessoa, int tam) // cadastro
-{
-    for (int i = 0; i < tam; i++)
+void leitura(Escaninho *pessoa, vetor *localizacao) // cadastro
+{   
+    for(int i=0;i<12;i++)//local na memória está salvo?FAZER VARREDURA
     {
-        printf("\nID: ");
-        scanf("%d", &pessoa[i].id);
-        printf("\nEscolha o Tipo volume pelo número: 1- Bolsa pequena, 2-Bolsa Grande, 3-Mochila, 4-Sacola, 5-Caixa: ");
-        scanf("\n%d", &pessoa[i].tipvol);
-        printf("\nEscolha a localização(NÚMERO DE 0 A 12): ");
-        scanf("%d", &pessoa[i].locali);
-        printf("\nInforme o CPF do acompanhante: ");
-        scanf("%s", pessoa[i].cpfacomp);
-        printf("\nInforme o CPF do paciente: ");
-        scanf("%s", pessoa[i].cpfpaci);
-        printf("\nUsuario Cadastrado com sucesso!\n");
+        if(i==0)
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                printf("\nID: ");
+                scanf("%d", &pessoa[i].id);
+                printf("\nEscolha o Tipo volume pelo número: 1- Bolsa pequena, 2-Bolsa Grande, 3-Mochila, 4-Sacola, 5-Caixa: ");
+                scanf("\n%d", &pessoa[i].tipvol);
+                printf("\nInforme o CPF do acompanhante: ");
+                scanf("%s", pessoa[i].cpfacomp);
+                printf("\nInforme o CPF do paciente: ");
+                scanf("%s", pessoa[i].cpfpaci);
+                printf("\nUsuario Cadastrado com sucesso!\n");
+                localizacao[i]=i;
+            	}
+        }
     }
 }
 
-void escrita(Escaninho *pessoa, int tam)
+void escrita(Escaninho *pessoa, vetor *localizacao)
 {
-    for (int i = 0; i < tam; i++)
+    for (int i = 0; i < 12; i++)
     {
         printf("\nID:%d", pessoa[i].id);
         switch (pessoa[i].tipvol)
@@ -48,13 +53,13 @@ void escrita(Escaninho *pessoa, int tam)
             printf("\nopcao Invalida");
             break;
         }
-        printf("\nlocalização: %d", pessoa[i].locali);
+        printf("\nlocalização: " );
         printf("\ncpf do acompanhante: %s", pessoa[i].cpfacomp);
         printf("\ncpf do paciente: %s", pessoa[i].cpfpaci);
     }
 }
 
-void menu(Escaninho *pessoa, int tam)
+void menu(Escaninho *pessoa, vetor *localizacao)
 {
     int op = 0;
 
@@ -76,28 +81,28 @@ void menu(Escaninho *pessoa, int tam)
         switch (op)
         {
         case 1:
-            leitura(pessoa, tam);
+            leitura(pessoa, localizacao);
             break; // chamada da função para cadastro de pessoa
         case 2:
-            buscacpfacomp(pessoa, tam);
+            buscacpfacomp(pessoa, localizacao);
             break; // busca de volumes por cpf do acompanhante
         case 3:
-            buscacpfpaci(pessoa, tam);
+            buscacpfpaci(pessoa, localizacao);
             break; // busca de volumes por cpf do paciente
         case 4:
-            volumetotal(pessoa, tam);
+            volumetotal(pessoa, localizacao);
             break; // relatório dos volumes totais contendo: cpfpaci, cpfacomp e localizacao;
         case 5:
-            volumeportipo(pessoa, tam);
+            volumeportipo(pessoa, localizacao);
             break;
         case 6:
-            volumeporlocali(pessoa, tam);
+            volumeporlocali(pessoa, localizacao);
             break;
         case 7:
-            printf("\nSaindo...");
+            printf("\nSaindo...\n");
             break;
         default:
-            printf("\nOpção inexistente");
+            printf("\nOpção inexistente\n");
             break;
         }
     } while (op != 7);
@@ -105,37 +110,37 @@ void menu(Escaninho *pessoa, int tam)
 
 // ALGORITMOS DE BUSCA ABAIXO:
 
-void buscacpfacomp(Escaninho *pessoa, int tam)
+void buscacpfacomp(Escaninho *pessoa, vetor *localizacao)
 {
     Escaninho aux;
-    bubblesort(pessoa, tam);
+    bubblesort(pessoa, localizacao);
     printf("Informe o CPF do acompanhante, para busca de volumes: ");
     scanf("%s", aux.cpfacomp);
 
-    for (int i = 0; i < tam; i++)
+    for (int i = 0; i < 12; i++)
     {
     }
 }
 
-void buscacpfpaci(Escaninho *pessoa, int tam)
+void buscacpfpaci(Escaninho *pessoa, vetor *localizacao)
 {
 }
 
 // RELATÓRIOS ABAIXO:
 
-void volumetotal(Escaninho *pessoa, int tam)
+void volumetotal(Escaninho *pessoa, vetor *localizacao)
 {}
-void volumeportipo(Escaninho *pessoa, int tam)
+void volumeportipo(Escaninho *pessoa, vetor *localizacao)
 {}
-void volumeporlocali(Escaninho *pessoa, int tam)
+void volumeporlocali(Escaninho *pessoa, vetor *localizacao)
 {}
 // ALGORITMOS DE ORDENAÇÂO ABAIXO:
 
-void bubblesort(Escaninho *pessoa, int tam)
+void bubblesort(Escaninho *pessoa, vetor *localizacao)
 {
     Escaninho aux;
-    for (int i = 0; i < tam - 1; i++)
-        for (int j = i + 1; j < tam; j++)
+    for (int i = 0; i < 12 - 1; i++)
+        for (int j = i + 1; j < 12; j++)
             if (pessoa[i].id > pessoa[j].id)
             {
                 aux = pessoa[i];
@@ -144,10 +149,10 @@ void bubblesort(Escaninho *pessoa, int tam)
             }
 }
 
-void mergesort(Escaninho *pessoa, int tam)
+void mergesort(Escaninho *pessoa, vetor *localizacao)
 {
 }
 
-void quicksort(Escaninho *pessoa, int tam)
+void quicksort(Escaninho *pessoa, vetor *localizacao)
 {
 }
