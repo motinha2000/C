@@ -130,8 +130,22 @@ void volumeporlocali(Escaninho *pessoa)//PRONTO
 {    
     int op=0;
 
-    printf("\nInforme a localizacao que deseja olhar: ");
+    printf("\nInforme o compartimento do escaninho que deseja olhar(1 a 12): ");
     scanf("%d", &op);
+    for(int i=0;i<12;i++)
+    {   //1- Bolsa pequena, 2-Bolsa Grande, 3-Mochila, 4-Sacola, 5-Caixa: 
+        if(pessoa[i].localizacao==(op-1)){
+            switch(pessoa[i].tipvol){
+                case 1: printf("\nNa posicao %d tem uma BOLSA PEQUENA.", i+1);break;
+                case 2: printf("\nNa posicao %d tem uma BOLSA GRANDE.", i+1);break;
+                case 3: printf("\nNa posicao %d tem uma MOCHILA.", i+1);break;
+                case 4: printf("\nNa posicao %d tem uma SACOLA.", i+1);break;
+                case 5: printf("\nNa posicao %d tem uma CAIXA.", i+1);break;
+                default: printf("\nOpcao inexistente!");break;
+            }
+            break;
+        }
+    }
 }
 // ALGORITMOS DE ORDENAÇÂO ABAIXO:
 
