@@ -13,7 +13,7 @@ int main()
 {setlocale(LC_ALL,"Portuguese-Brazilian");
     
     Escaninho *pessoa; // criação da variável pessoa do tipo Escaninho
-    pessoa = malloc(2*sizeof(Escaninho));
+    pessoa = malloc(12*sizeof(Escaninho));
     for(int i=0;i<2;i++){//preenchimento das posições do vetor
         pessoa[i].localizacao=-1;
     }
