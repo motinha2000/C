@@ -7,18 +7,16 @@ Sugeriu-se que esse controle de volumes fosse realizado por meio de um programa 
 #include <stdio.h>
 #include "biblio.h"
 #include <stdlib.h>
-#include <locale.h>
 
 int main()
-{setlocale(LC_ALL,"Portuguese-Brazilian");
-    
+{
     Escaninho *pessoa; // criação da variável pessoa do tipo Escaninho
     pessoa = malloc(12*sizeof(Escaninho));
-    for(int i=0;i<2;i++){//preenchimento das posições do vetor
+    for(int i=0;i<2;i++){//preenchimento das posições do vetor para controle da localizacao futuramente
         pessoa[i].localizacao=-1;
     }
-    
-    menu(pessoa);
+
+    menu(pessoa);//chamada da função principal MENU
 
     return 0;
 }

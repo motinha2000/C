@@ -20,8 +20,9 @@ void leitura(Escaninho *pessoa) // cadastro
             scanf("%s", pessoa[i].cpfpaci);
             printf("\nUsuario Cadastrado com sucesso!\n");
             pessoa[i].localizacao = i;
-            break;
+            
         }
+        break;
     }
 }
 
@@ -38,7 +39,7 @@ void menu(Escaninho *pessoa)
     printf("|    4 - Volumes armazenados atualmente.                      |\n"); // imprimir dados do paciente e do acompanahnte e a localização no escaninho
     printf("|    5 - Quantidade de volumes de acordo com o tipo.          |\n"); // busca por tipvol //PRONTO
     printf("|    6 - Volume armazenado em uma determinada localizacao.    |\n"); // imprimir o tipo do volume na determinada localização fornecida PRONTO
-    printf("|    7 - Sair do programa.                                    |\n"); // Encerra o programa
+    printf("|    7 - Sair do programa.                                    |\n"); // Encerra o programa //PRONTO
     printf("|                                                             |\n");
     printf("|____________________________________Digite a opcao desejada--> ");
     scanf("%d", &op);
@@ -48,21 +49,21 @@ void menu(Escaninho *pessoa)
         {
         case 1:
             leitura(pessoa);
-            break; // chamada da função para cadastro de pessoa
+            break; // chamada da função para cadastro de pessoa.
         case 2:
             buscacpfacomp(pessoa);
-            break; // busca de volumes por cpf do acompanhante
+            break; // busca de volumes por cpf do acompanhante.
         case 3:
             buscacpfpaci(pessoa);
-            break; // busca de volumes por cpf do paciente
+            break; // busca de volumes por cpf do paciente.
         case 4:
             volumetotal(pessoa);
-            break; // relatório dos volumes totais contendo: cpfpaci, cpfacomp e localizacao;
+            break; // relatório dos volumes totais contendo: cpfpaci, cpfacomp e localizacao.
         case 5:
-            volumeportipo(pessoa);
+            volumeportipo(pessoa); // relatório de cadastros preenchidos totais no sistema.
             break;
         case 6:
-            volumeporlocali(pessoa);
+            volumeporlocali(pessoa); // volume guardado em uma localização especifíca.
             break;
         case 7:
             printf("\nSaindo...\n");
@@ -112,6 +113,16 @@ void buscacpfpaci(Escaninho *pessoa)
 
 void volumetotal(Escaninho *pessoa)
 {
+    for(int i=0;i<12;i++)
+    {
+        if(pessoa[i].localizacao!=-1){
+            printf("\n==========================");
+            printf("\nCadastro encontrado!");
+            printf("\n%s",pessoa[i].cpfpaci);
+            printf("\n%s",pessoa[i].cpfacomp);
+            printf("\n%d",pessoa[i].localizacao);          
+        }
+    }
 }
 void volumeportipo(Escaninho *pessoa)
 {
