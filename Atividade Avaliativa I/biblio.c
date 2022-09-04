@@ -1,6 +1,7 @@
 /*Arquivo que carrega as funções do arquivo cabeçalho.*/
 #include <stdio.h>  //biblioteca base de entrada e saida
 #include "biblio.h" //adição do cabelho
+#include <string.h>
 
 // FUNÇÕES BASE:
 
@@ -33,9 +34,9 @@ void menu(Escaninho *pessoa)
         printf("|                Seja Bem-Vindo!                              |\n");
         printf("|                                                             |\n");
         printf("|    1 - Entrada de volume no escaninho.                      |\n"); // Cadastro PRONTO.
-        printf("|    2 - Busca de volumes por CPF do acompanhante.            |\n"); // busca por cpf do acompanhante
-        printf("|    3 - Busca de volumes por CPF do paciente.                |\n"); // busca por cpf do paciente
-        printf("|    4 - Volumes armazenados atualmente.                      |\n"); // imprimir dados do paciente e do acompanahnte e a localização no escaninho
+        printf("|    2 - Busca de volumes por CPF do acompanhante.            |\n"); // busca por cpf do acompanhante //PRONTO
+        printf("|    3 - Busca de volumes por CPF do paciente.                |\n"); // busca por cpf do paciente //
+        printf("|    4 - Volumes armazenados atualmente.                      |\n"); // imprimir dados do paciente e do acompanahnte e a localização no escaninho //PRONTO
         printf("|    5 - Quantidade de volumes de acordo com o tipo.          |\n"); // busca por tipvol //PRONTO
         printf("|    6 - Volume armazenado em uma determinada localizacao.    |\n"); // imprimir o tipo do volume na determinada localização fornecida //PRONTO 
         printf("|                                                             |\n");
@@ -93,6 +94,36 @@ void menu(Escaninho *pessoa)
 
 void buscacpfacomp(Escaninho *pessoa)
 {
+    Escaninho aux;
+    printf("\nInforme o CPF do acompanhante: ");
+    scanf("%s", aux.cpfacomp);
+
+    for(int i=0;i<12;i++)
+    {
+        if(strcmp(pessoa[i].cpfacomp,aux.cpfacomp)==0){
+            switch(pessoa[i].tipvol){
+                case 1:
+                printf("\nVinculado na posicao %d com uma BOLSA PEQUENA.", i+1);
+                break;
+            case 2:
+                printf("\nVinculado na posicao %d com uma BOLSA GRANDE.", i+1);
+                break;
+            case 3:
+                printf("\nVinculado na posicao %d com uma MOCHILA.", i+1);
+                break;
+            case 4:
+                printf("\nVinculado na posicao %d com uma SACOLA.", i+1);
+                break;
+            case 5:
+                printf("\nVinculado na posicao %d com uma CAIXA.", i+1);
+                break;
+            default:
+                printf("\nOpcao de volume inexistente!");
+                break; 
+            }
+            break;
+        }
+    }
 
 }
 
@@ -160,7 +191,7 @@ void volumeporlocali(Escaninho *pessoa) // PRONTO
                 printf("\nNa posicao %d tem uma CAIXA.", i + 1);
                 break;
             default:
-                printf("\nOpcao inexistente!");
+                printf("\nOpcao de volume inexistente!");
                 break;
             }
             break;
