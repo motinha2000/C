@@ -12,8 +12,8 @@ int main()
 {
     Escaninho *pessoa; // criação da variável pessoa do tipo Escaninho
     pessoa = malloc(12*sizeof(Escaninho));
-    for(int i=0;i<2;i++){//preenchimento das posições do vetor para controle da localizacao futuramente
-        pessoa[i].localizacao=-1;
+    for(int i=0;i<12;i++){//preenchimento das posições do vetor para controle da localizacao futuramente
+        pessoa[i].localizacao=999;
     }
 
     menu(pessoa);//chamada da função principal MENU
