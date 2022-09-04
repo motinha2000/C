@@ -129,6 +129,36 @@ void buscacpfacomp(Escaninho *pessoa)
 
 void buscacpfpaci(Escaninho *pessoa)
 {
+    Escaninho aux;
+    printf("\nInforme o CPF do paciente: ");
+    scanf("%s", aux.cpfpaci);
+
+    for(int i=0;i<12;i++)
+    {
+        if(strcmp(pessoa[i].cpfpaci,aux.cpfpaci)==0){
+            switch(pessoa[i].tipvol){
+                case 1:
+                printf("\nVinculado na posicao %d com uma BOLSA PEQUENA.", i+1);
+                break;
+            case 2:
+                printf("\nVinculado na posicao %d com uma BOLSA GRANDE.", i+1);
+                break;
+            case 3:
+                printf("\nVinculado na posicao %d com uma MOCHILA.", i+1);
+                break;
+            case 4:
+                printf("\nVinculado na posicao %d com uma SACOLA.", i+1);
+                break;
+            case 5:
+                printf("\nVinculado na posicao %d com uma CAIXA.", i+1);
+                break;
+            default:
+                printf("\nOpcao de volume inexistente!");
+                break; 
+            }
+            break;
+        }
+    }
 }
 
 // RELATÓRIOS ABAIXO:
