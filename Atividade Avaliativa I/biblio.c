@@ -21,6 +21,8 @@ void leitura(Escaninho *pessoa) // cadastro
             scanf("%s", pessoa[i].cpfpaci);
             printf("\nUsuario Cadastrado com sucesso!\n");
             pessoa[i].localizacao = i;
+            printf("\nLocalizacao atual: %d!", i);
+            printf("\nProxima localizacao: %d!", i+1);
             break;
         }
     }
