@@ -2,7 +2,7 @@
 #include <stdio.h>  //biblioteca base de entrada e saida
 #include "biblio.h" //adição do cabelho
 #include <string.h> //adição da biblioteca de strings para usar o strcmp
-#include <math.h> //adição da biblioteca de funções matemáticas
+#include <math.h>   //adição da biblioteca de funções matemáticas
 #include <stdlib.h> //adição da biblioteca para uso da função free
 
 // FUNÇÕES BASE:
@@ -98,12 +98,11 @@ void menu(Escaninho *pessoa)
 // ALGORITMOS DE BUSCA ABAIXO:
 
 void buscacpfacomp(Escaninho *pessoa)
-{   
-    mergeSort(pessoa,0,12);
+{
+    mergesort(pessoa, 0, 12);
     Escaninho aux;
     printf("\nInforme o CPF do acompanhante: ");
     scanf("%s", aux.cpfacomp);
-
 
     for (int i = 0; i < 12; i++)
     {
@@ -175,7 +174,7 @@ void buscacpfpaci(Escaninho *pessoa)
 
 void volumetotal(Escaninho *pessoa)
 {
-    bubblesort(pessoa);
+    mergesort(pessoa, 0, 12);
     for (int i = 0; i < 12; i++)
     {
         if (pessoa[i].localizacao != 999)
@@ -260,20 +259,20 @@ void bubblesort(Escaninho *pessoa)
     }
 }
 
-void mergeSort(Escaninho *pessoa, int inicio, int fim)
+void mergesort(Escaninho *pessoa, int inicio, int fim)
 {
     int meio;
     if (inicio < fim)
     {
         meio = floor((inicio + fim) / 2);
-        mergeSort(pessoa, inicio, meio);
-        mergeSort(pessoa, meio + 1, fim);
+        mergesort(pessoa, inicio, meio);
+        mergesort(pessoa, meio + 1, fim);
         merge(pessoa, inicio, meio, fim);
     }
 }
 
 void merge(Escaninho *pessoa, int inicio, int meio, int fim)
-{   
+{
     Escaninho *temp;
     int p1, p2, tamanho, i, j, k;
     int fim1 = 0, fim2 = 0;
