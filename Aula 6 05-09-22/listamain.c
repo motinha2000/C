@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lista.h"
+#include "listaseq.h"
 
 int main(int argc, char const *argv[])
 {
