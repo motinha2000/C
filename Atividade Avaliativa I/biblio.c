@@ -1,7 +1,7 @@
 /*Arquivo que carrega as funções do arquivo cabeçalho.*/
 #include <stdio.h>  //biblioteca base de entrada e saida
 #include "biblio.h" //adição do cabelho
-#include <string.h>
+#include <string.h> //adição da biblioteca de strings para usar o strcmp
 
 // FUNÇÕES BASE:
 
