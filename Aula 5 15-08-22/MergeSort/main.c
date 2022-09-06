@@ -15,7 +15,7 @@ void escrita(int *vet, int tam)
 {
     for (int i = 0; i < tam; i++)
     {
-        printf("\n%d", vet[i]);
+        printf("%d>", vet[i]);
     }
 }
 
@@ -78,11 +78,11 @@ int main()
     printf("Quantidade de elementos no vetor: ");
     scanf("%d", &tam);
 
-    vet = malloc(tam * sizeof(int));
+    vet = (int *)malloc(tam * sizeof(int));
 
     leitura(vet, tam);
     escrita(vet, tam);
-    mergeSort(vet, 0, tam);
-    printf("\nVETOR ORDENADO: ");
+    mergeSort(vet, 0, tam-1);
+    printf("\nVETOR ORDENADO: \n");
     escrita(vet, tam);
 }
