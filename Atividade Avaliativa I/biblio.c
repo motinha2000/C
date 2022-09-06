@@ -98,9 +98,10 @@ void menu(Escaninho *pessoa)
 void buscacpfacomp(Escaninho *pessoa)
 {
     mergesort(pessoa, 0, 11);
-    Escaninho aux;
+    Escaninho aux, *bbi;
     printf("\nInforme o CPF do acompanhante: ");
     scanf("%s", aux.cpfacomp);
+    buscabinaria(pessoa, 11, bbi);
 
     for (int i = 0; i < 12; i++)
     {
@@ -133,7 +134,7 @@ void buscacpfacomp(Escaninho *pessoa)
 }
 
 void buscacpfpaci(Escaninho *pessoa)
-{   
+{
     mergesort(pessoa, 0, 12);
     Escaninho aux;
     printf("\nInforme o CPF do paciente: ");
@@ -307,4 +308,32 @@ void mergesort(Escaninho *pessoa, int inicio, int fim)
         mergesort(pessoa, meio + 1, fim);
         merge(pessoa, inicio, meio, fim);
     }
+}
+
+// ALGORITMOS DE BUSCA
+
+int buscabinaria(Escaninho *pessoa, int tam, Escaninho *bbi)
+{
+    int inicio = 0;
+    int fim = tam - 1;
+    int meio;
+
+    while (inicio <= fim)
+    {
+        meio = (inicio + fim) / 2;
+        if (bbi->cpfacomp < pessoa[meio].cpfacomp)
+        {
+            fim = meio - 1;
+        }
+        else if (bbi->cpfacomp > pessoa[meio].cpfacomp)
+        {
+            inicio = meio +1;
+        }
+        else
+        {
+            return meio;
+        }
+        
+    }
+    return -1;
 }

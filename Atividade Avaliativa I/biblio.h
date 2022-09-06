@@ -27,3 +27,7 @@ void bubblesort(Escaninho *pessoa ); // algoritmo de ordenação bubblesort
 void mergesort(Escaninho *pessoa, int inicio, int fim);  // algoritmo de ordenação mergesort
 void merge(Escaninho *pessoa, int inicio, int meio, int fim); //algoritmo de merge dos vetores criados em mergeSort
 void quicksort(Escaninho *pessoa );  // algoritmo de ordenação quicksort
+
+// função de busca binária
+
+int buscabinaria(Escaninho *pessoa, int tam, Escaninho *aux); 
