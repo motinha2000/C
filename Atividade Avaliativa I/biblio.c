@@ -101,7 +101,6 @@ void buscacpfacomp(Escaninho *pessoa)
     Escaninho aux, *bbi;
     printf("\nInforme o CPF do acompanhante: ");
     scanf("%s", aux.cpfacomp);
-    buscabinaria(pessoa, 11, bbi);
 
     for (int i = 0; i < 12; i++)
     {
@@ -311,29 +310,3 @@ void mergesort(Escaninho *pessoa, int inicio, int fim)
 }
 
 // ALGORITMOS DE BUSCA
-
-int buscabinaria(Escaninho *pessoa, int tam, Escaninho *bbi)
-{
-    int inicio = 0;
-    int fim = tam - 1;
-    int meio;
-
-    while (inicio <= fim)
-    {
-        meio = (inicio + fim) / 2;
-        if (bbi->cpfacomp < pessoa[meio].cpfacomp)
-        {
-            fim = meio - 1;
-        }
-        else if (bbi->cpfacomp > pessoa[meio].cpfacomp)
-        {
-            inicio = meio +1;
-        }
-        else
-        {
-            return meio;
-        }
-        
-    }
-    return -1;
-}
