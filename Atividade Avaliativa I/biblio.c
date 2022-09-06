@@ -97,7 +97,7 @@ void menu(Escaninho *pessoa)
 
 void buscacpfacomp(Escaninho *pessoa)
 {
-    mergesort(pessoa, 0, 12);
+    mergesort(pessoa, 0, 11);
     Escaninho aux;
     printf("\nInforme o CPF do acompanhante: ");
     scanf("%s", aux.cpfacomp);
@@ -133,7 +133,8 @@ void buscacpfacomp(Escaninho *pessoa)
 }
 
 void buscacpfpaci(Escaninho *pessoa)
-{
+{   
+    mergesort(pessoa, 0, 12);
     Escaninho aux;
     printf("\nInforme o CPF do paciente: ");
     scanf("%s", aux.cpfpaci);
@@ -172,7 +173,7 @@ void buscacpfpaci(Escaninho *pessoa)
 
 void volumetotal(Escaninho *pessoa)
 {
-    mergesort(pessoa, 0, 12);
+    mergesort(pessoa, 0, 11);
     for (int i = 0; i < 12; i++)
     {
         if (pessoa[i].localizacao != 999)
@@ -257,18 +258,6 @@ void bubblesort(Escaninho *pessoa)
     }
 }
 
-void mergesort(Escaninho *pessoa, int inicio, int fim)
-{
-    int meio;
-    if (inicio < fim)
-    {
-        meio = floor((inicio + fim) / 2);
-        mergesort(pessoa, inicio, meio);
-        mergesort(pessoa, meio + 1, fim);
-        merge(pessoa, inicio, meio, fim);
-    }
-}
-
 void merge(Escaninho *pessoa, int inicio, int meio, int fim)
 {
     Escaninho *temp;
@@ -277,7 +266,7 @@ void merge(Escaninho *pessoa, int inicio, int meio, int fim)
     tamanho = fim - inicio + 1;
     p1 = inicio;
     p2 = meio + 1;
-    temp = malloc(tamanho * sizeof(Escaninho));
+    temp = (Escaninho *)malloc(tamanho * sizeof(Escaninho));
     if (temp != NULL)
     {
         for (i = 0; i < tamanho; i++)
@@ -306,4 +295,16 @@ void merge(Escaninho *pessoa, int inicio, int meio, int fim)
             pessoa[k] = temp[j];
     }
     free(temp);
+}
+
+void mergesort(Escaninho *pessoa, int inicio, int fim)
+{
+    int meio;
+    if (inicio < fim)
+    {
+        meio = floor((inicio + fim) / 2);
+        mergesort(pessoa, inicio, meio);
+        mergesort(pessoa, meio + 1, fim);
+        merge(pessoa, inicio, meio, fim);
+    }
 }
