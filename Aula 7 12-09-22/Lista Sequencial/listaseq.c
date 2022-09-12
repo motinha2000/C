@@ -13,7 +13,7 @@ struct lista
 Lista *cria_lista()
 {
     Lista *li;
-    li = malloc(CTT*sizeof(struct lista));//d = malloc (sizeof (data)); (Lista *)removido!
+    li = (Lista *)malloc(sizeof(struct lista));
     if (li != NULL)
         li->qtd = 0;
     return li;
@@ -48,33 +48,14 @@ int lista_vazia(Lista *li)
 
 int insere_lista_inicio(Lista *li, struct aluno al)
 {
-    if (li == NULL)
+    if(li==NULL)
         return 0;
-    if (li->qtd == MAX)
+    if(li->qtd==MAX)
         return 0;
     int i;
-    for (li->qtd - 1; i >= 0; i--)
-        li->dados[i + 1] = li->dados[i];
-    li->dados[0] = al;
+    for(li->qtd-1;i>=0;i--)
+        li->dados[i+1]=li->dados[i];
+    li->dados[0]=al;
     li->qtd++;
-    return 1;
-}
-
-int insere_lista_final(Lista *li, struct aluno al)
-{
-    if (li == NULL)
-        return 0;
-    if (li->qtd == MAX) // lista cheia
-        return 0;
-    li->dados[li->qtd] = al;
-    li->qtd++;
-    return 1;
-}
-
-int busca_lista_pos(Lista *li, int pos, struct aluno *al)
-{
-    if (li == NULL || pos <= 0 || pos > li->qtd)
-        return 0;
-    *al = li->dados[pos - 1];
     return 1;
 }
