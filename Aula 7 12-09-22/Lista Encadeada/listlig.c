@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void f(void)
+{
+    Lista I = no(14, no(10, no(3, no(1, no(5, NULL)))));
+    exibe(I);
+}
 
 Lista no(Item x, Lista p) // implementa o conteudo
 {
@@ -20,10 +25,10 @@ void exibe(Lista L)
     }
 }
 
-void f(void)
-{
-    Lista I = no(10, no(3, no(1, no(5, NULL))));
-    exibe(I);
+void exibe_inv(Lista L){
+    if(L==NULL) return;
+    exibe_inv(L->prox);
+    printf(fmt, L->item);
 }
 
 void anexa(Lista *A, Lista B)
@@ -33,4 +38,32 @@ void anexa(Lista *A, Lista B)
     while (*A != NULL)
         A = &(*A)->prox;
     *A = B;
+}
+
+void destroi(Lista *L)
+{
+    while (*L != NULL){
+        Lista n= *L;
+        *L = n->prox;
+        free(n);
+    }
+}
+
+int tam(Lista L)
+{
+    if(L == NULL) return 0;
+    return 1 + tam(L->prox);
+}
+
+int pert(Item x, Lista L)
+{
+    if(L == NULL) return 0;
+    if(x == L->item) return 1;
+    return pert(x,L->prox);
+}
+
+Lista clone(Lista L)
+{
+    if (L==NULL) return NULL;
+    return no(L->item,clone(L->prox));
 }

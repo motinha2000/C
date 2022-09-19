@@ -1,7 +1,9 @@
 #include "listlig.h"
 #include <stdio.h>
 
-void main()
+int main()
 {
-    f();
+    Lista L = no(3,no(1,no(5,NULL)));
+    exibe_inv(L);
+    return 0;
 }
