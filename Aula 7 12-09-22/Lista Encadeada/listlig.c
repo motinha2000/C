@@ -98,9 +98,9 @@ void rem(Item x, Lista *L)
 {
     while (*L != NULL && (*L)->item < x) // PERCORRER A LISTA
         L = &(*L)->prox;
-    if (*L == NULL || (*L)->item > x)//NÃO PERTECE A LISTA
+    if (*L == NULL || (*L)->item > x) // NÃO PERTECE A LISTA
         return;
-    Lista n = *L;//GUARDA O VALOR ENCONTRADO
+    Lista n = *L; // GUARDA O VALOR ENCONTRADO
     *L = n->prox;
     free(n);
 }
@@ -118,6 +118,11 @@ void rem_rep(Item x, Lista *L)
         L = &(*L)->prox;
     if (*L == NULL || (*L)->item > x)
         return;
-    rem(x,L);
+    int r = ocorrencias(x, (*L));
 
+    while(r>1)
+    {
+        rem(x, L);
+        r--;
+    }
 }

@@ -13,6 +13,7 @@ int main()
 
     rem_rep(1, &L);
     rem_rep(2, &L);
+    rem_rep(3, &L);
     printf("\n==================================");
     exibe(L);
 
