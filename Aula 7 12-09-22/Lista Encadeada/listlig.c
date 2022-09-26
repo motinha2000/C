@@ -87,7 +87,7 @@ int ocorrencias(Item x, Lista L)
     ocorrencias(x, L->prox);
 }
 
-void ins(Item x, Lista *L)
+void ins_ord(Item x, Lista *L)
 {
     while (*L != NULL && (*L)->item < x)
         L = &(*L)->prox;
@@ -120,9 +120,17 @@ void rem_rep(Item x, Lista *L)
         return;
     int r = ocorrencias(x, (*L));
 
-    while(r>1)
+    while (r > 1)
     {
         rem(x, L);
         r--;
     }
+}
+
+void ins_nem(Item x, Lista *L)
+{
+    while (L != NULL && (*L)->item < x) // PERCORRER A LISTA
+        L = &(*L)->prox;
+    if (*L == NULL || (*L)->item > x) // NÃO PERTENCE A LISTA
+        ins_ord(x, &L);
 }
