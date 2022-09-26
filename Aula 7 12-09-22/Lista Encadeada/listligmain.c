@@ -3,7 +3,16 @@
 
 int main()
 {
-    Lista L = no(3,no(1,no(5,NULL)));
-    exibe_inv(L);
+    Lista L = no(3, NULL);
+    ins(1, &L);
+    ins(2, &L);
+    ins(1, &L);
+
+    exibe(L);
+
+    rem_rep(1, &L);
+    printf("\n==================================");
+    exibe(L);
+
     return 0;
 }
