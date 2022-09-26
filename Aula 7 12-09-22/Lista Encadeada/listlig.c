@@ -118,7 +118,6 @@ void rem_rep(Item x, Lista *L)
         L = &(*L)->prox;
     if (*L == NULL || (*L)->item > x)
         return;
-    int n = x;
-    rem(n,L);
+    rem(x,L);
 
 }

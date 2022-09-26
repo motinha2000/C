@@ -7,10 +7,12 @@ int main()
     ins(1, &L);
     ins(2, &L);
     ins(1, &L);
+    ins(2, &L);
 
     exibe(L);
 
     rem_rep(1, &L);
+    rem_rep(2, &L);
     printf("\n==================================");
     exibe(L);
 
