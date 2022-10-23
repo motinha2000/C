@@ -11,7 +11,10 @@ void menu();
 
 // FUNÇÔES DA EXPRESSÃO
 int prio(char o);
-char *posfixa(char *e);
+char *posfixai(char *e);
+float valori(char *e);
+float valorf(char *e);
+char *posfixaf(char *e);
 
 // FUNÇÕES DA PILHA
 Pilha pilha(int m);
