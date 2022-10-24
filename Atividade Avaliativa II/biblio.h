@@ -12,7 +12,7 @@ void menu();
 // FUNÇÔES DA EXPRESSÃO
 int prio(char o);
 char *posfixai(char *e);
-float valori(char *e);
+int valori(char *e);
 float valorf(char *e);
 char *posfixaf(char *e);
 

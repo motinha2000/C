@@ -2,15 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include <string.h>
 
 // FUNÇÂO DO MENU PRINCIPAL
 void menu()
 {
     setlocale(LC_ALL, "Portuguese");
     int opcao = 1;
-    char exp[100];
-    char e[256];
+    char e[257];
     while (opcao != 4)
     {
         printf("\nMenu de Opções");
@@ -20,24 +18,26 @@ void menu()
         printf("\n4. Sair do Programa.");
         printf("\nOpção: ");
         scanf("%d", &opcao);
+        fflush(stdin);
         switch (opcao)
         {
         case 1:
             printf("\nInfixa? ");
             gets(e);
+            fflush(stdin);
             printf("\nPosfixa: %s\n", posfixai(e));
             break;
         case 2:
-            printf("\nQual o valor das variáveis? \n");
+            printf("\nQual o valor das variáveis?\n");
             break;
         case 3:
-            printf("\nO valor final da expressão é: 10\n");
+            printf("\nO valor final da expressão é: %d.\n",valori(posfixai(e)));
             break;
         case 4:
-            printf("\nSaindo do Programa...\n\n");
+            printf("\nSaindo do Programa...\n");
             break;
         default:
-            printf("\nOpção não localizada!");
+            printf("\nOpção não localizada!\n");
             break;
         }
     }

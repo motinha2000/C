@@ -51,12 +51,12 @@ char *posfixai(char *e)
     return s;
 }
 
-float valori(char *e)
-{
+int valori(char *e)
+{   
     Pilha P = pilha(256);
     for (int i = 0; e[i]; i++)
         if (isdigit(e[i]))
-            empilha(e[i] - 'O', P);
+            empilha(e[i] - '0', P);
         else
         {
             int y = desempilha(P);
@@ -82,7 +82,7 @@ float valori(char *e)
     return z;
 }
 
-char *posfixa(char *e)
+char *posfixaf(char *e)
 {
     static char s[256];
     Pilha P = pilha(256);
