@@ -146,10 +146,19 @@ float valorf(char *e)
 }
 
 void lervar(char *e)
-{   
-    Pilha P = pilha(256);
+{
     char s[256];
-    strcpy(s,posfixai(e));
-    int tam = strlen(s);
-    printf("\n%s\n",s);
-    
+    char x;
+
+    strcpy(s, posfixai(e));
+    printf("\n%s\n", s);
+
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+
+        if (s[i] >= 'a' && s[i] <= 'z' || s[i]>='A' && s[i] <= 'Z')
+        {
+            printf("\nEncontrei a variável %c.\n", s[i]);
+        }
+    }
+}
