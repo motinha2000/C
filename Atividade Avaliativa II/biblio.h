@@ -9,12 +9,16 @@ typedef struct pilha
 // FUNÇÃO DO MENU
 void menu();
 
+
 // FUNÇÔES DA EXPRESSÃO
 int prio(char o);
 char *posfixai(char *e);
 int valori(char *e);
 float valorf(char *e);
 char *posfixaf(char *e);
+void lervar(char *e);
+
+
 
 // FUNÇÕES DA PILHA
 Pilha pilha(int m);

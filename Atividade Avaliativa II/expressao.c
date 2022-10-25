@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include "biblio.h"
 
-// FUNÇÕES PARA TRATAMENTO DA EXPRESSÃƒO INFIXA
+// FUNÇÕES PARA TRATAMENTO DA EXPRESSÃO INFIXA
 
 int prio(char o)
 {
@@ -19,7 +19,7 @@ int prio(char o)
     case '/':
         return 2;
     }
-    return -1; // operador invÃ¡lido!
+    return -1; // operador inválido!
 }
 
 char *posfixai(char *e)
@@ -30,8 +30,7 @@ char *posfixai(char *e)
     for (int i = 0; e[i]; i++)
         if (e[i] == '(')
             empilha('(', P);
-        else if (isdigit(e[i]))
-            s[j++] = e[i];
+
         else if (strchr("+-/*", e[i]))
         {
             while (!vaziap(P) && prio(topo(P)) >= prio(e[i]))
@@ -44,6 +43,8 @@ char *posfixai(char *e)
                 s[j++] = desempilha(P);
             desempilha(P);
         }
+        else if (!isdigit(e[i]))
+            s[j++] = e[i];
     while (!vaziap(P))
         s[j++] = desempilha(P);
     s[j] = '\0';
@@ -52,7 +53,7 @@ char *posfixai(char *e)
 }
 
 int valori(char *e)
-{   
+{
     Pilha P = pilha(256);
     for (int i = 0; e[i]; i++)
         if (isdigit(e[i]))
@@ -143,3 +144,12 @@ float valorf(char *e)
     destroip(&P);
     return z;
 }
+
+void lervar(char *e)
+{   
+    Pilha P = pilha(256);
+    char s[256];
+    strcpy(s,posfixai(e));
+    int tam = strlen(s);
+    printf("\n%s\n",s);
+    

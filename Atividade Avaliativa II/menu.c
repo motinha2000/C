@@ -25,12 +25,13 @@ void menu()
             printf("\nInfixa? ");
             gets(e);
             fflush(stdin);
-            printf("\nPosfixa: %s\n", posfixai(e));
             break;
         case 2:
             printf("\nQual o valor das variáveis?\n");
+            lervar(e);
             break;
         case 3:
+            printf("\nExpressão pós-fixa: %s .\n",posfixai(e));
             printf("\nO valor final da expressão é: %d.\n",valori(posfixai(e)));
             break;
         case 4:
