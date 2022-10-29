@@ -7,11 +7,12 @@
 void menu()
 {
     setlocale(LC_ALL, "Portuguese");
+    
     int opcao = 1;
     char e[257];
     while (opcao != 4)
     {
-        printf("\nMenu de Opções");
+        printf("\nMenu de Opções\n");
         printf("\n1. Definição da Expressão. ");
         printf("\n2. Definição das variáveis. ");
         printf("\n3. Avaliação da Expressão Pós-fixa. ");
@@ -29,10 +30,11 @@ void menu()
         case 2:
             printf("\nQual o valor das variáveis?\n");
             lervar(e);
+            fflush(stdin);
             break;
         case 3:
-            printf("\nExpressão pós-fixa: %s .\n",posfixai(e));
-            printf("\nO valor final da expressão é: %d.\n",valori(posfixai(e)));
+            printf("\nExpressão pós-fixa: %s \n",posfixai(e));
+            printf("\nO valor final da expressão é: %.2f.\n",valorf(e));
             break;
         case 4:
             printf("\nSaindo do Programa...\n");

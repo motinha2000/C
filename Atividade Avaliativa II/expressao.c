@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 #include "biblio.h"
 
 // FUNÇÕES PARA TRATAMENTO DA EXPRESSÃO INFIXA
@@ -104,27 +105,33 @@ char *posfixaf(char *e)
         {
             while (topo(P) != '(')
                 s[j++] = desempilha(P);
-            s[j] = '\0';
-            destroip(&P);
-            return s;
+            desempilha(P);
         }
+    while (!vaziap(P))
+        s[j++] = desempilha(P);
+    s[j] = '\0';
+    destroip(&P);
+    return s;
 }
 
 float valorf(char *e)
 {
+    char str[256];
+    strcpy(str, posfixaf(e));
     Pilha P = pilha(256);
-    for (int i = 0; e[i]; i++)
-        if (isdigit(e[i]))
+    for (int i = 0; str[i]; i++)
+
+        if (isdigit(str[i]))
         {
-            empilha(atof(e + i), P);
-            while (isdigit(e[i + 1]) || e[i + 1] == '.')
+            empilha(atof(str + i), P);
+            while (isdigit(str[i + 1]) || str[i + 1] == '.')
                 i++;
         }
-        else if (strchr("+*-/", e[i]))
+        else if (strchr("+*-/", str[i]))
         {
             float y = desempilha(P);
             float x = desempilha(P);
-            switch (e[i])
+            switch (str[i])
             {
             case '+':
                 empilha(x + y, P);
@@ -140,6 +147,7 @@ float valorf(char *e)
                 break;
             }
         }
+
     float z = desempilha(P);
     destroip(&P);
     return z;
@@ -147,18 +155,33 @@ float valorf(char *e)
 
 void lervar(char *e)
 {
-    char s[256];
-    char x;
+    int tam = 0;
+    int z=0;
 
-    strcpy(s, posfixai(e));
-    printf("\n%s\n", s);
-
-    for (int i = 0; s[i] != '\0'; i++)
+    for (int i = 0; e[i] != '\0'; i++)
     {
-
-        if (s[i] >= 'a' && s[i] <= 'z' || s[i]>='A' && s[i] <= 'Z')
+        if (e[i] >= 'a' && e[i] <= 'z' || e[i] >= 'A' && e[i] <= 'Z')
         {
-            printf("\nEncontrei a variável %c.\n", s[i]);
+            tam++;
         }
+    }
+
+    Expressao expp;
+    expp = malloc(tam * sizeof(Expressao));
+
+    for(int i = 0;e[i]!='\0';i++)
+    {      
+        if (e[i] >= 'a' && e[i] <= 'z' || e[i] >= 'A' && e[i] <= 'Z')
+        {
+            expp[z].var=e[i];
+            z++;
+        }
+    }
+
+    for (int i = 0; i < tam; i++)
+    {
+        printf("\nInforme um valor para a variável %c: ", expp[i].var);
+        scanf("%f", &expp[i].valor);
+        fflush(stdin);
     }
 }
