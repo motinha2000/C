@@ -153,35 +153,24 @@ float valorf(char *e)
     return z;
 }
 
-void lervar(char *e)
+char *lervar(char *e)
 {
-    int tam = 0;
-    int z=0;
+    int j = 0;
+    char x;
+    static char aux[256];
+    strcpy(aux, e);
 
-    for (int i = 0; e[i] != '\0'; i++)
+    do
     {
-        if (e[i] >= 'a' && e[i] <= 'z' || e[i] >= 'A' && e[i] <= 'Z')
+        if (aux[j] >= 'a' && aux[j] <= 'z' || aux[j] >= 'A' && aux[j] <= 'Z')
         {
-            tam++;
+            printf("\nVariável encontrada: %c.", aux[j]);
+            j++;
         }
-    }
-
-    Expressao expp;
-    expp = malloc(tam * sizeof(Expressao));
-
-    for(int i = 0;e[i]!='\0';i++)
-    {      
-        if (e[i] >= 'a' && e[i] <= 'z' || e[i] >= 'A' && e[i] <= 'Z')
+        else
         {
-            expp[z].var=e[i];
-            z++;
+            j++;
         }
-    }
-
-    for (int i = 0; i < tam; i++)
-    {
-        printf("\nInforme um valor para a variável %c: ", expp[i].var);
-        scanf("%f", &expp[i].valor);
-        fflush(stdin);
-    }
+    } while (e[j] < '\0');
+    return aux;
 }

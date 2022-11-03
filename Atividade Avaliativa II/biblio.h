@@ -6,15 +6,8 @@ typedef struct pilha
     Itemp *item;
 } * Pilha;
 
-typedef struct expresao
-{
-    char var;
-    float valor;
-}*Expressao;
-
 // FUNÇÃO DO MENU
-void
-menu();
+void menu();
 
 // FUNÇÔES DA EXPRESSÃO
 int prio(char o);
@@ -22,7 +15,7 @@ char *posfixai(char *e);
 int valori(char *e);
 float valorf(char *e);
 char *posfixaf(char *e);
-void lervar(char *e);
+char *lervar(char *e);
 
 // FUNÇÕES DA PILHA
 Pilha pilha(int m);
