@@ -1,7 +1,7 @@
 #include "palindromo.h"
-#include "C:\Users\gamot\Documents\Vs Code\C\Aula 8 03-10-22\Pilha Conversor Binário\pilha.h"
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -14,10 +14,11 @@ int main(void)
         if (isalpha(s[i]))
         {
             enfileira(s[i], F);
-            empilha(s[i], P);
+            empilha(s[i], &P);
         }
-    while (!vaziaf(F) && desenfileira(F) == desempilha(P));
-        
+    while (!vaziaf(F) && desenfileira(F) == desempilha(&P))
+        ;
+
     if (vaziaf(F))
         puts("A frase eh palindroma");
     else
