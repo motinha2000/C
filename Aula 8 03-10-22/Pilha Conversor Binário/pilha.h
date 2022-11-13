@@ -1,11 +1,12 @@
 typedef int Itemp;
+#define avanca(i) (i = (i + 1) % F->max)
 
 typedef struct pilha
 {
     int max;
     int topo;
     Itemp *item;
-} *Pilha;
+} * Pilha;
 
 Pilha pilha(int m);
 int vaziap(Pilha *P);

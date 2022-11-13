@@ -1,4 +1,4 @@
-typedef int Itemp;
+typedef char Itemp;
 
 typedef struct pilha
 {

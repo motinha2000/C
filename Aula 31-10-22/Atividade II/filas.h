@@ -9,7 +9,7 @@ typedef struct fila
     Itemf *item; // itens da fila
 } * Fila;
 
-#define avanca(i) (i = (i + 1) % F->max);
+#define avanca(i) (i = (i + 1) % F->max); //função inline
 
 Fila fila(int m);
 int vaziaf(Fila F);
@@ -17,3 +17,4 @@ int cheiaf(Fila F);
 void enfileira(Itemf x, Fila F);
 Itemf desenfileira(Fila F);
 void destroif(Fila *G);
+void menu();
