@@ -5,8 +5,8 @@
 void gerarsenha(Fila PF, Fila BS, Fila PJ)
 {
     int op = -1;
-    do
-    {
+    int pf=0,bs=0,pj=0;
+
         printf("\n1 - Pessoa Fisica.");
         printf("\n2 - Beneficio Social.");
         printf("\n3 - Pessoa Juridica.");
@@ -16,16 +16,15 @@ void gerarsenha(Fila PF, Fila BS, Fila PJ)
         switch (op)
         {
         case 1:
-            enfileira(PF->item[PF->final]+1, PF);
-            printf("\n%d",desenfileira(PF));
+            enfileira(++pf, PF);
             break;
             return ;
         case 2:
-            enfileira(2, BS);
+            enfileira(++bs, BS);
             break;
             return ;
         case 3:
-            enfileira(3, PJ);
+            enfileira(++pj, PJ);
             break;
             return ;
         case 0:
@@ -34,7 +33,6 @@ void gerarsenha(Fila PF, Fila BS, Fila PJ)
         default:
             printf("Opcao nao localizada!");
         }
-    } while (op != 0);
 
     return;
 }

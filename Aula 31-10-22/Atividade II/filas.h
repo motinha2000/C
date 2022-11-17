@@ -8,6 +8,7 @@ typedef struct fila
     int final;   // posição do final
     Itemf *item; // itens da fila
 } * Fila;
+
 #define avanca(i) (i = (i + 1) % F->max); //função inline
 
 //FUNÇÕES PARA FUNCIONAMENTO DA FILA
