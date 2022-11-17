@@ -28,7 +28,7 @@ void enfileira(Itemf x, Fila F)
     if (cheiaf(F))
     {
         puts("\nfila cheia!");
-        abort();
+        return ;
     }
     F->item[F->final] = x;
     avanca(F->final);
@@ -53,25 +53,4 @@ void destroif(Fila *G)
     free((*G)->item);
     free(*G);
     *G = NULL;
-}
-
-void menu()
-{
-    int op = -1;
-    while (op != 0)
-    {   
-        printf("\n1 - Para pegar uma senha.");
-        printf("\n2 - Para chamar uma senha.");
-        printf("\n0 - Para encerrar o expediente!");
-        printf("\nInforme uma Opcao: ");
-        scanf("%d",&op);
-        switch (op)
-        {
-            case 1: printf("\nTudo OK!\n");break;
-            case 2: printf("\nTudo OK!\n");break;
-            case 0: break;
-            default: printf("\nOpcao nao localizada.");break;
-        }
-    }
-
 }

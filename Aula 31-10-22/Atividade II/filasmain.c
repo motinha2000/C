@@ -8,5 +8,5 @@ int main(void)
     Fila BS = fila(5);
     Fila PJ = fila(5);
 
-    menu();
+    menu(PF,BS,PJ);
 }
