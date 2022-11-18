@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void menu(Fila PF, Fila BS, Fila PJ)
+void menu(Fila PF, Fila BS, Fila PJ, int* pf, int* bs, int* pj)
 {
     int op = -1;
     while (op != 0)
@@ -15,11 +15,11 @@ void menu(Fila PF, Fila BS, Fila PJ)
         switch (op)
         {
         case 1:
-            gerarsenha(PF, BS, PJ);
+            gerarsenha(PF, BS, PJ, pf, bs, pj);
             break;
 
         case 2:
-            chamarsenha(PF, BS, PJ);
+            chamarsenha(PF, BS, PJ, pf, bs, pj);
             break;
 
         case 0:

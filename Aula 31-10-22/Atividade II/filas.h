@@ -20,9 +20,9 @@ Itemf desenfileira(Fila F);
 void destroif(Fila *G);
 
 //FUNÇÃO DO MENU
-void menu(Fila PF, Fila BS, Fila PJ);
+void menu(Fila PF, Fila BS, Fila PJ, int* pf, int* bs, int* pj);
 
 //FUNÇÃO PARA GERAR SENHA
-void gerarsenha(Fila PF, Fila BS, Fila PJ);
+void gerarsenha(Fila PF, Fila BS, Fila PJ, int* pf, int* bs, int* pj);
 //FUNÇÃO PARA CHAMAR SENHA
-void chamarsenha(Fila PF, Fila BS, Fila PJ);
+void chamarsenha(Fila PF, Fila BS, Fila PJ, int* pf, int* bs, int* pj);

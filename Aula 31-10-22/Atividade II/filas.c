@@ -40,7 +40,6 @@ Itemf desenfileira(Fila F)
     if (vaziaf(F))
     {
         puts("\nfila vazia!");
-        abort();
     }
     Itemf x = F->item[F->inicio];
     avanca(F->inicio);

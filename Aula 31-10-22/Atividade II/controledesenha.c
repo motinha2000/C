@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void gerarsenha(Fila PF, Fila BS, Fila PJ)
+void gerarsenha(Fila PF, Fila BS, Fila PJ, int *pf, int *bs, int *pj)
 {
     int op = -1;
-    int pf=0,bs=0,pj=0;
 
         printf("\n1 - Pessoa Fisica.");
         printf("\n2 - Beneficio Social.");
@@ -16,15 +15,15 @@ void gerarsenha(Fila PF, Fila BS, Fila PJ)
         switch (op)
         {
         case 1:
-            enfileira(++pf, PF);
+            enfileira(++(*pf), PF);
             break;
             return ;
         case 2:
-            enfileira(++bs, BS);
+            enfileira(++(*bs), BS);
             break;
             return ;
         case 3:
-            enfileira(++pj, PJ);
+            enfileira(++(*pj), PJ);
             break;
             return ;
         case 0:
@@ -37,7 +36,7 @@ void gerarsenha(Fila PF, Fila BS, Fila PJ)
     return;
 }
 
-void chamarsenha(Fila PF, Fila BS, Fila PJ)
+void chamarsenha(Fila PF, Fila BS, Fila PJ, int *pf, int *bs, int *pj)
 {
     int op = -1;
     do
