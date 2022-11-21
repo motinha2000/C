@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void menu(Fila PF, Fila BS, Fila PJ, int* pf, int* bs, int* pj)
+void menu(Fila PF, Fila BS, Fila PJ, int *pf, int *bs, int *pj)
 {
     int op = -1;
     while (op != 0)
@@ -23,6 +23,23 @@ void menu(Fila PF, Fila BS, Fila PJ, int* pf, int* bs, int* pj)
             break;
 
         case 0:
+            while (!vaziaf(PF))
+            {
+                printf("\nA senha PF: %d nao foi chamada.", desenfileira(PF));
+            }
+            printf("\n");
+            while (!vaziaf(BS))
+            {
+                printf("\nA senha BS: %d nao foi chamada.", desenfileira(BS));
+            }
+            printf("\n");
+
+            while (!vaziaf(PJ))
+            {
+                printf("\nA senha PJ: %d nao foi chamada.", desenfileira(PJ));
+            }
+            printf("\n");
+            
             break;
 
         default:
