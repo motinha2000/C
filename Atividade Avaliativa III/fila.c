@@ -1,55 +1,21 @@
-#include "filas.h"
+#include "fila.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-Fila fila(int m)
+Lista no(Item x, Lista p)
 {
-    Fila F = malloc(sizeof(struct fila));
-    F->max = m;
-    F->total = 0;
-    F->inicio = 0;
-    F->final = 0;
-    F->item = malloc(m * sizeof(Itemf));
-    return F;
+    Lista n = malloc(sizeof(struct no));
+    n->item = x;
+    n->prox = p;
+    return n;
 }
 
-int vaziaf(Fila F)
+void destroi(Lista *L)
 {
-    return (F->total == 0);
-}
-
-int cheiaf(Fila F)
-{
-    return (F->total == F->max);
-}
-
-void enfileira(Itemf x, Fila F)
-{
-    if (cheiaf(F))
+    while(*L != NULL)
     {
-        puts("\nfila cheia!");
-        return ;
+        Lista n = *L;
+        *L = n->prox;
+        free(n);
     }
-    F->item[F->final] = x;
-    avanca(F->final);
-    F->total++;
-}
-
-Itemf desenfileira(Fila F)
-{
-    if (vaziaf(F))
-    {
-        puts("\nfila vazia!");
-    }
-    Itemf x = F->item[F->inicio];
-    avanca(F->inicio);
-    F->total--;
-    return x;
-}
-
-void destroif(Fila *G)
-{
-    free((*G)->item);
-    free(*G);
-    *G = NULL;
 }
