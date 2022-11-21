@@ -16,14 +16,17 @@ void gerarsenha(Fila PF, Fila BS, Fila PJ, int *pf, int *bs, int *pj)
         {
         case 1:
             enfileira(++(*pf), PF);
+            printf("\nSenha - %d para atendimento PF gerada.",*pf);
             break;
             return ;
         case 2:
             enfileira(++(*bs), BS);
+            printf("\nSenha - %d para atendimento BS gerada.",*bs);
             break;
             return ;
         case 3:
             enfileira(++(*pj), PJ);
+            printf("\nSenha - %d para atendimento PJ gerada.",*pj);
             break;
             return ;
         case 0:

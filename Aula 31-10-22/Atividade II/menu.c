@@ -38,8 +38,7 @@ void menu(Fila PF, Fila BS, Fila PJ, int *pf, int *bs, int *pj)
             {
                 printf("\nA senha PJ: %d nao foi chamada.", desenfileira(PJ));
             }
-            printf("\n");
-            
+
             break;
 
         default:
