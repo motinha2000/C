@@ -1,13 +1,13 @@
-#define fmt "\nItem: %d " // formato de exibição dos itens
+#define fmt "\nItem: %d " // formato de exibiÃÂ§ÃÂ£o dos itens
 
 typedef int Item; // tipo dos itens na lista
-typedef struct no // estrutura dos nós da lista
+typedef struct no // estrutura dos nÃÂ³s da lista
 {
     Item item;
     struct no *prox;
 } * Lista; // tipo de ponteiro para a lista
 
-Lista no(Item x, Lista p); // criação da lista, X o conteudo, e P o endereço
+Lista no(Item x, Lista p); // criação da lista, X o conteudo, e P o endereÃÂ§o
 void exibe(Lista L);
 void f(void);
 void destroi(Lista *L);

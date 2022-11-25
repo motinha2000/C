@@ -98,7 +98,7 @@ void rem(Item x, Lista *L)
 {
     while (*L != NULL && (*L)->item < x) // PERCORRER A LISTA
         L = &(*L)->prox;
-    if (*L == NULL || (*L)->item > x) // NÃO PERTECE A LISTA
+    if (*L == NULL || (*L)->item > x) // NAO PERTENCE A LISTA
         return;
     Lista n = *L; // GUARDA O VALOR ENCONTRADO
     *L = n->prox;

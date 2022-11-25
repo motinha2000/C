@@ -1,8 +1,8 @@
-#include "fila.h"
+#include "biblio.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void menu()
+void menu(Lista *G)
 {
     int op = -1;
     while (op != 0)
@@ -13,14 +13,15 @@ void menu()
         puts("0 - Sair do programa.");
         printf("Informe a opcao: ");
         scanf("%d", &op);
+        fflush(stdin);
 
         switch (op)
         {
-            case 1: break;
-            case 2: break;
-            case 3: break;
-            case 0: puts("\nSaindo...\n");break;
-            default: puts("\nOpcao nao localizada!!!");
+            case 1: insere(G);break;
+            case 2: chamar(G);break;
+            case 3: retira(G);break;
+            case 0: destroi(G);puts("\nSaindo...\n");break;
+            default: puts("\nOpcao nao localizada!!!");break;
         }
     }
 }

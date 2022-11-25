@@ -1,7 +1,8 @@
-#include "fila.h"
+#include "biblio.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 void main(){
-    menu();
+    Lista G;
+    menu(&G);
 }
