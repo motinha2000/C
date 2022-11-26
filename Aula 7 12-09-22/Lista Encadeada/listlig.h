@@ -1,7 +1,6 @@
-#define fmt "\nItem: %d " // formato de exibiÃÂ§ÃÂ£o dos itens
-
+#define fmt "\nItem: %d " // formato de exibi
 typedef int Item; // tipo dos itens na lista
-typedef struct no // estrutura dos nÃÂ³s da lista
+typedef struct no // estrutura dos nao da lista
 {
     Item item;
     struct no *prox;

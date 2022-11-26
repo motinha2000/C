@@ -1,22 +1,39 @@
 #include "biblio.h"
 #include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
-void insere(Lista *G){
+void insere(Lista *G)
+{
     Item aux;
     puts("\nInforme o nome do paciente: ");
-    gets(aux.nome);
+    fgets(aux.nome,10,stdin);
     fflush(stdin);
     puts("\nInforme a prioridade deste paciente: ");
-    scanf("%d",&aux.prior);
+    scanf("%d", &aux.prior);
     fflush(stdin);
-
     ins_ord(aux,G);
 }
 
-void chamar(Lista *G){
+void chamar(Lista *G)
+{
     puts("\nChamado!");
 }
 
-void retira(Lista *G){
+void retira(Lista *G)
+{
     puts("\nRetirado");
+}
+
+void mostrar(Lista G)
+{
+    while(G !=NULL)
+    {   
+        if(G!=NULL)
+        printf("\nPACIENTE: %s",G->item.nome);
+        printf("PRIORIDADE: %d\n",G->item.prior);
+        G = G->prox;
+    }
 }

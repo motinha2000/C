@@ -10,6 +10,7 @@ void menu(Lista *G)
         puts("\n1 - Insere um paciente na fila.");
         puts("2 - Chama um paciente da fila.");
         puts("3 - Retira paciente da fila.");
+        puts("4 - DEBUG: Exibir a fila.");
         puts("0 - Sair do programa.");
         printf("Informe a opcao: ");
         scanf("%d", &op);
@@ -20,7 +21,8 @@ void menu(Lista *G)
             case 1: insere(G);break;
             case 2: chamar(G);break;
             case 3: retira(G);break;
-            case 0: destroi(G);puts("\nSaindo...\n");break;
+            case 4: mostrar(*G);break;
+            case 0: printf("\nSaindo...\n");break;
             default: puts("\nOpcao nao localizada!!!");break;
         }
     }
