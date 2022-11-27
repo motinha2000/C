@@ -30,4 +30,4 @@ void chamar(Lista *G);
 // RETIRA PACIENTE DA FILA
 void retira(Lista *G);
 // MOSTRA PACIENTES NA FILA
-void mostrar(Lista G);
+void mostrar(Lista *G);

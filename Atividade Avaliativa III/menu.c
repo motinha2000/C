@@ -21,7 +21,7 @@ void menu(Lista *G)
             case 1: insere(G);break;
             case 2: chamar(G);break;
             case 3: retira(G);break;
-            case 4: mostrar(*G);break;
+            case 4: mostrar(G);break;
             case 0: printf("\nSaindo...\n");break;
             default: puts("\nOpcao nao localizada!!!");break;
         }
