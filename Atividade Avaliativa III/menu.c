@@ -19,8 +19,8 @@ void menu(Lista *G, int *c)
         switch (op)
         {
             case 1: insere(G,c);break;
-            case 2: chamar(G);break;
-            case 3: retira(G);break;
+            case 2: chamar(G,c);break;
+            case 3: retira(G,c);break;
             case 4: mostrar(*G);break;
             case 0: printf("\nSaindo...\n");break;
             default: puts("\nOpcao nao localizada!!!");break;

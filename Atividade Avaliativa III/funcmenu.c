@@ -8,17 +8,7 @@
 void insere(Lista *G, int *c)
 {
     Item aux;
-    if ((*c)==0)
-    {
-        puts("\nInforme o nome do pacientes: ");
-        gets(aux.nome);
-        fflush(stdin);
-        puts("\nInforme a prioridade deste pacientes: ");
-        scanf("%d", &aux.prior);
-        fflush(stdin);
-        *G = no(aux, NULL);
-        (*c)++;
-    } else
+    if ((*c) == 0)
     {
         puts("\nInforme o nome do paciente: ");
         gets(aux.nome);
@@ -26,21 +16,41 @@ void insere(Lista *G, int *c)
         puts("\nInforme a prioridade deste paciente: ");
         scanf("%d", &aux.prior);
         fflush(stdin);
-        ins_ord(aux,G);
+        *G = no(aux, NULL);
+        (*c)++;
+    }
+    else
+    {
+        puts("\nInforme o nome do paciente: ");
+        gets(aux.nome);
+        fflush(stdin);
+        puts("Informe a prioridade deste paciente: ");
+        scanf("%d", &aux.prior);
+        fflush(stdin);
+        ins_ord(aux, G);
     }
 }
 
-void chamar(Lista *G)
+void chamar(Lista *G, int *c)
 {
-    puts("\nChamado!");
+    if ((*c) == 0)
+        puts("\nA fila esta vazia!");
+    else
+    {
+        printf("\nCHAMANDO PACIENTE: %s!\n", (*G)->item.nome);
+        Lista n = *G;
+        *G = n->prox;
+        free(n);
+        (*c)--;
+    }
 }
 
-void retira(Lista *G)
+void retira(Lista *G, int *c)
 {
     puts("\nRetirado");
 }
 
-void mostrar(Lista G)
+void mostrar(Lista G)//FUNÇÃO PARA DEPURAR O PROGRAMA E ENTENDER SEU FUNCIONAMENTO
 {
     while (G != NULL)
     {

@@ -24,8 +24,8 @@ void menu(Lista *G, int *c);
 // INSERIR PACIENTE NA FILA
 void insere(Lista *G, int *c);
 // CHAMAR PACIENTE DA FILA
-void chamar(Lista *G);
+void chamar(Lista *G, int *c);
 // RETIRA PACIENTE DA FILA
-void retira(Lista *G);
+void retira(Lista *G, int *c);
 // MOSTRA PACIENTES NA FILA
 void mostrar(Lista G);
