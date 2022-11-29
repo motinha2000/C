@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void menu(Lista *G)
-{
+void menu(Lista *G, int *c)
+{   
     int op = -1;
     while (op != 0)
     {
@@ -18,10 +18,10 @@ void menu(Lista *G)
 
         switch (op)
         {
-            case 1: insere(G);break;
+            case 1: insere(G,c);break;
             case 2: chamar(G);break;
             case 3: retira(G);break;
-            case 4: mostrar(G);break;
+            case 4: mostrar(*G);break;
             case 0: printf("\nSaindo...\n");break;
             default: puts("\nOpcao nao localizada!!!");break;
         }

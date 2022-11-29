@@ -6,6 +6,7 @@ void f(void)
 {
     Lista I = no(14, no(10, no(3, no(1, no(5, NULL)))));
     exibe(I);
+    printf("\nTamanho: %d",tam(I));
 }
 
 Lista no(Item x, Lista p) // implementa o conteudo
@@ -20,7 +21,7 @@ void exibe(Lista L)
 {
     while (L != NULL)
     {
-        printf("\n" fmt, L->item);
+        printf(fmt, L->item);
         L = L->prox;
     }
 }
@@ -132,5 +133,5 @@ void ins_nem(Item x, Lista *L)
     while (L != NULL && (*L)->item < x) // PERCORRER A LISTA
         L = &(*L)->prox;
     if (*L == NULL || (*L)->item > x) // NÃO PERTENCE A LISTA
-        ins_ord(x, &L);
+        ins_ord(x, L);
 }

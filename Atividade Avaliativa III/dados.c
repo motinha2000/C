@@ -20,6 +20,13 @@ void ins_ord(Item x, Lista *L)
     *L = no(x, *L);
 }
 
+int tam(Lista L)
+{
+    if (L == NULL)
+        return 0;
+    return 1 + tam(L->prox);
+}
+
 void destroi(Lista *L)
 {
     while (*L != NULL)

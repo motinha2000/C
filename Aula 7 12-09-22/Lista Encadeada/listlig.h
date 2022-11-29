@@ -19,4 +19,3 @@ void ins_ord(Item x, Lista *L);
 void rem(Item x, Lista *L);
 int em(Item x, Lista L);
 void ins_nem(Item x, Lista *L);
-

@@ -3,10 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-void main(){
-    Item x;
-    strcpy(x.nome,"teste");
-    x.prior = -1;
-    Lista G = no(x,NULL);
-    menu(&G);
+void main()
+{   int c = 0;
+    Lista G; 
+    menu(&G,&c);
 }
