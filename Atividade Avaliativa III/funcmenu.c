@@ -28,6 +28,7 @@ void insere(Lista *G, int *c)
         scanf("%d", &aux.prior);
         fflush(stdin);
         ins_ord(aux, G);
+        (*c)++;
     }
 }
 
@@ -47,10 +48,35 @@ void chamar(Lista *G, int *c)
 
 void retira(Lista *G, int *c)
 {
-    puts("\nRetirado");
+    int ctrl = 0;
+    Item aux;
+    if ((*c) == 0)
+    {
+        puts("\nA fila esta vazia!");
+    }
+    else
+    {
+        puts("\nQual o nome do paciente que voce deseja retirar da fila?: ");
+        gets(aux.nome);
+        while (*G != NULL) // PERCORRER A LISTA
+        {
+            if (strcmp((*G)->item.nome, aux.nome) == 0)
+            {
+                Lista n = *G; // GUARDA O VALOR ENCONTRADO
+                *G = n->prox;
+                free(n);
+                ctrl = -1;
+                (*c)--;
+                break;
+            }
+            G = &(*G)->prox; // PULAR PARA O PROXIMO ITEM(LISTA)
+        }
+        if (ctrl == 0)
+            puts("\nPaciente n√£o localizado!");
+    }
 }
 
-void mostrar(Lista G)//FUN«√O PARA DEPURAR O PROGRAMA E ENTENDER SEU FUNCIONAMENTO
+void mostrar(Lista G) // FUN√á√ÉO PARA DEPURAR O PROGRAMA E ENTENDER SEU FUNCIONAMENTO
 {
     while (G != NULL)
     {
