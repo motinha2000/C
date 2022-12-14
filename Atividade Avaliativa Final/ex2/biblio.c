@@ -1,4 +1,7 @@
 #include "biblio.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 Pilha pilha(int m)
 {
@@ -25,37 +28,41 @@ int cheiap(Pilha P)
         return 0;
 }
 
-void empilha(Itemp x, Pilha P)
+void empilha(Itemp x, Pilha *P)
 {
-    if (cheiap(P))
+    if (cheiap(*P))
+        puts("\npilha cheia!");
+    else
     {
-        puts("pilha cheia!");
+        (*P)->topo++;
+        (*P)->item[(*P)->topo] = x;
     }
-    P->topo++;
-    P->item[P->topo] = x;
 }
 
-Itemp desempilha(Pilha P)
-{
-    if (vaziap(P))
+Itemp desempilha(Pilha *P)
+{   
+    if (vaziap(*P))
+        puts("\npilha vazia!");
+    else
     {
-        puts("pilha vazia!");
+        Itemp x = (*P)->item[(*P)->topo];
+        (*P)->topo--;
+        return x;
     }
-    Itemp x = P->item[P->topo];
-    P->topo--;
-    return x;
 }
 
 Itemp topo(Pilha P)
 {
     if (vaziap(P))
-    {
-        puts("pilha vazia!");
-    }
-    return P->item[P->topo];
+        puts("\npilha vazia!");
+    else
+        puts("\nCHEGOU AQUI!");
+
+        return P->item[P->topo];
 }
 
-void destroip(Pilha *Q){
+void destroip(Pilha *Q)
+{
     free((*Q)->item);
     free(*Q);
     *Q = NULL;
