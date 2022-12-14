@@ -1,5 +1,7 @@
 #include "biblio.h"
 
 int main(){
-    f();
+    int c = 0;
+    Lista G;
+    menu(&G,&c);
 }

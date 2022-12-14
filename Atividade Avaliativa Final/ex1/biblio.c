@@ -10,8 +10,11 @@ Lista no(Item x, Lista p)
     return n;
 }
 
-void exibe(Lista L)
-{
+void exibe(Lista L, int *c)
+{   
+    if ((*c) == 0)
+        puts("\nA fila esta vazia!");
+    else
     while (L != NULL)
     {
         printf(fmt, L->item);
@@ -28,21 +31,18 @@ void anexa(Lista *A, Lista B)
     *A = B;
 }
 
-void f(void)
-{
-    Lista I = no(3, no(1, no(5, NULL)));
-    printf("\nTAM: %d\n",tam(I));
-    exibe(I);
-}
-
-void destroi(Lista *L)
-{
+void destroi(Lista *L, int *c)
+{   
+    if ((*c) == 0)
+        puts("\nA fila esta vazia!");
+    else
     while (*L != NULL)
     {
         Lista n = *L;
         *L = n->prox;
         free(n);
     }
+    (*c)=0;
 }
 
 int tam(Lista L)
@@ -50,4 +50,35 @@ int tam(Lista L)
     if (L == NULL)
         return 0;
     return 1 + tam(L->prox);
+}
+
+int pert(Item x, Lista L)
+{
+    if (L == NULL)
+        return 0;
+    if (x == L->item)
+        return 1;
+    return pert(x, L->prox);
+}
+
+Lista clone(Lista L)
+{
+    if (L == NULL)
+        return NULL;
+    return no(L->item, clone(L->prox));
+}
+
+void exibe_inv(Lista L)
+{
+    if (L == NULL)
+        return;
+    exibe_inv(L->prox);
+    printf(fmt, L->item);
+}
+
+void ins_ord(Item x, Lista *L)
+{
+    while (*L != NULL && (*L)->item < x)
+        L = &(*L)->prox;
+    *L = no(x, *L);
 }
